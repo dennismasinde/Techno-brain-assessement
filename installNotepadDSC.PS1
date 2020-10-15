@@ -20,7 +20,7 @@ Node Localhost #update the node name to point to the target VM
      {
      Ensure = 'Present'
      Name = 'Notepad++ (64-bit x64)'
-     Path = 'D:\NotepadPlusPlus\npp.7.5.1.Installer.x64.exe' #update the file path
+     Path = 'D:\NotepadPlusPlus\npp.7.9 Installer.x64.exe' #update the file path
      ProductId = ''
      Arguments = '/S'
     }
