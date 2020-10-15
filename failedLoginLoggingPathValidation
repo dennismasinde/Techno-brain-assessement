@@ -1,0 +1,23 @@
+HOW TO HANDLE FAILED INSTALLATION
+
+1. a)The -ErrorAction parameter can be used this to force a cmdlet to handle the error the way you want.
+   When modifying an existing script, append it to the end of the cmdlet line.
+   When doing multiple searches, change the parameter from Stop to SilentlyContinue,
+   so the script continues if a search fails. 
+   To see what the error is, use Continue as the parameter instead
+
+   b)Using Try/Catch, branch the script when cmdlets return an error.
+
+
+HOW TO LOG EVENTS BEING HANDLED BY THE AUTOMATION SCRIPT
+
+2. The -ErrorVariable parameter your cmdlet's errors write to a custom variable.
+   Define a variable, e.g $ExampleError
+   Create a text file after you set the error variable (ExampleError)
+   Call ExampleError in the ErrorVariable parmeter
+   Use the Inquire option for the ErrorAction parameter to add to an existing log when the New-Item cmdlet fails.
+   Build your Try/Catch block, use the Catch to log to a text file and use Get-Date to create the timestamp. 
+
+HOW TO ENSURE VALIDITY OF DATA IN A SCRIPT
+
+3. ValidateScript [ValidateScript({ Test-Path $_ -PathType Container })]
